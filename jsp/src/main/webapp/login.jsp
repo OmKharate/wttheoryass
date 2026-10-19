@@ -1,0 +1,6 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Sign in · JSP</title><link rel="stylesheet" href="<%= request.getContextPath() %>/style.css"></head>
+<body><main class="shell"><section class="card"><p class="eyebrow">WEB TECHNOLOGY LAB · JSP</p><h1>Welcome back</h1><p class="sub">Sign in to continue to your workspace.</p>
+<% if (request.getAttribute("notice") != null) { %><p class="notice <%= request.getAttribute("noticeType") %>" role="status"><%= request.getAttribute("notice") %></p><% } %>
+<form action="<%= request.getContextPath() %>/login" method="post"><label for="email">Email address</label><input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required><label for="password">Password</label><input id="password" name="password" type="password" autocomplete="current-password" placeholder="Enter your password" required><button type="submit">Sign in <span aria-hidden="true">→</span></button></form><p class="foot">Demo only · Authentication not connected</p></section></main></body></html>
