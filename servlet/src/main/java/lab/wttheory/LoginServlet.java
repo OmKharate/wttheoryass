@@ -19,12 +19,11 @@ public class LoginServlet extends HttpServlet {
                 password == null || password.isBlank()) {
             request.setAttribute("message", "Enter a valid email and password.");
             request.setAttribute("messageType", "error");
-            request.getRequestDispatcher("/index.html").forward(request, response);
-            return;
+        } else {
+            // Authentication is deliberately not simulated: connect Supabase Auth here.
+            request.setAttribute("message", "Input validated. Authentication is not connected yet.");
+            request.setAttribute("messageType", "success");
         }
-        // Authentication is deliberately not simulated: connect Supabase Auth here.
-        request.setAttribute("message", "Input validated. Authentication is not connected yet.");
-        request.setAttribute("messageType", "success");
-        request.getRequestDispatcher("/index.html").forward(request, response);
+        request.getRequestDispatcher("/login-result.jsp").forward(request, response);
     }
 }
