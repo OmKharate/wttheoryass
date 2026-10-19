@@ -1,0 +1,7 @@
+{
+  "name": "angularjs-1x-login-demo",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": { "start": "vite --host 127.0.0.1", "build": "vite build" },
+  "devDependencies": { "vite": "^6.1.0" }
+}
