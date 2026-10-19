@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en" ng-app="loginApp"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0b1020">
+  <title>Sign in · AngularJS 1.x</title><link rel="stylesheet" href="/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.3/angular.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="/config.js"></script><script src="/app.js" defer></script>
+</head><body ng-controller="LoginController as vm">
+  <main class="shell"><section class="card" aria-labelledby="title">
+    <p class="eyebrow">WEB TECHNOLOGY LAB · ANGULARJS 1.x</p><h1 id="title">Welcome back</h1><p class="sub">Sign in to continue to your workspace.</p>
+    <p class="notice" ng-if="vm.notice" ng-class="vm.noticeType" role="status">{{ vm.notice }}</p>
+    <form name="loginForm" ng-submit="vm.signIn()" novalidate>
+      <label for="email">Email address</label><input id="email" name="email" type="email" ng-model="vm.email" autocomplete="email" placeholder="you@example.com" required>
+      <label for="password">Password</label><input id="password" name="password" type="password" ng-model="vm.password" autocomplete="current-password" placeholder="Enter your password" required>
+      <button type="submit" ng-disabled="vm.busy || loginForm.$invalid">{{ vm.busy ? 'Signing in…' : 'Sign in' }} <span aria-hidden="true">→</span></button>
+    </form><p class="foot">Powered by Supabase Auth</p>
+  </section></main>
+</body></html>
