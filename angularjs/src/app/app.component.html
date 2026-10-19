@@ -1,0 +1,16 @@
+<main class="shell">
+  <section class="card" aria-labelledby="title">
+    <p class="eyebrow">WEB TECHNOLOGY LAB · ANGULAR</p>
+    <h1 id="title">Welcome back</h1>
+    <p class="sub">Sign in to continue to your workspace.</p>
+    <p *ngIf="notice" class="notice" [class.error]="noticeType === 'error'" [class.success]="noticeType === 'success'" role="status">{{ notice }}</p>
+    <form (ngSubmit)="signIn()">
+      <label for="email">Email address</label>
+      <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required [(ngModel)]="email">
+      <label for="password">Password</label>
+      <input id="password" name="password" type="password" autocomplete="current-password" placeholder="Enter your password" required [(ngModel)]="password">
+      <button type="submit" [disabled]="busy">{{ busy ? 'Signing in…' : 'Sign in' }} <span aria-hidden="true">→</span></button>
+    </form>
+    <p class="foot">Powered by Supabase Auth</p>
+  </section>
+</main>
